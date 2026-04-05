@@ -480,6 +480,7 @@ fn database_open_reuses_trusted_tshm_snapshot_after_partial_checkpoint_with_back
         "partial-checkpoint reopen coverage requires live WAL frames beyond the backfill point"
     );
 
+    drop(authority);
     drop(conn);
     drop(db);
     let mut manager = DATABASE_MANAGER.lock();
